@@ -459,7 +459,3 @@ gh pr edit  ${{ github.ref_name }} \
 ![](https://storage.googleapis.com/zenn-user-upload/7f75d6ac7e61-20221001.png)
 
 こうやってtimesベースから改善しましょうと声があがったり相談できたりするのはとても良い文化だと思っています！
-
-もし弊社に興味が湧きましたら現在一緒に働けるメンバーを募集中ですので、一緒に是非お気軽にお声かけください！
-
-https://spacemarket.co.jp/recruit/engineer/
