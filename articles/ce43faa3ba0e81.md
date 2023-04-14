@@ -17,6 +17,13 @@ publication_name: "spacemarket"
 
 はじめまして[スペースマーケット](https://www.spacemarket.com/)でフロントエンドエンジニア兼リーダーをしている和山です。
 
+
+:::message alert
+Github Actionsでset-outputがDeprecateになったため記事の一部を更新してあります
+2023年5月末には使えなくなるため気をつけてください
+https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+:::
+
 # なぜやるのか
 
 さっそくですが、今回なぜGitHub Actionsにこのようなお仕事をお願いすることになったのかその経緯からまずはお話させていただきます。
@@ -54,6 +61,7 @@ https://zenn.dev/kshida/articles/auto-generate-release-pr-with-github-actions
 焦らなくても大丈夫です。分かっています、分かっています。
 これが欲しいんですよね、どうぞこちらをお使いください。
 
+
 ```yml
 on:
   push:
@@ -75,8 +83,8 @@ jobs:
 	  HEAD_MESSAGE: ${{ github.event.head_commit.message }}
         run: |
           COMMIT_MESSAGE=$(echo "${HEAD_MESSAGE}" | sed -n -e 1p)
-          echo "::set-output name=message::${COMMIT_MESSAGE}"
-          echo "::set-output name=count::$(gh pr list -S '本番反映'in:title | wc -l)"
+          echo "message=${COMMIT_MESSAGE}" >> "$GITHUB_OUTPUT"
+          echo "count=$(gh pr list -S '本番反映'in:title | wc -l)" >> "$GITHUB_OUTPUT"
       - name: Create Release Pull Request
         if: ${{ steps.check_pr.outputs.count == 0 }}
         run: |
@@ -226,8 +234,8 @@ https://github.com/actions/checkout
     HEAD_MESSAGE: ${{ github.event.head_commit.message }}
   run: |
     COMMIT_MESSAGE=$(echo "${HEAD_MESSAGE}" | sed -n -e 1p)
-    echo "::set-output name=message::${COMMIT_MESSAGE}"
-    echo "::set-output name=count::$(gh pr list -S '本番反映'in:title | wc -l)"
+    echo "message=${COMMIT_MESSAGE}" >> "$GITHUB_OUTPUT"
+    echo "count=$(gh pr list -S '本番反映'in:title | wc -l)" >> "$GITHUB_OUTPUT"
 ```
 nameというのは実行のタイトルです。
 Actionsの実行結果をみる際にどれが実行されたかわかりやすくするだけのGUI上での名前なのでいい感じの名前をつけてあげてください。
@@ -264,7 +272,7 @@ https://docs.github.com/en/actions/security-guides/security-hardening-for-github
 
 ```shell
 COMMIT_MESSAGE=$(echo "${HEAD_MESSAGE}" | sed -n -e 1p)
-echo "::set-output name=message::${COMMIT_MESSAGE}"
+echo "message=${COMMIT_MESSAGE}" >> "$GITHUB_OUTPUT"
 ```
 まずは１行目です。
 ここでは先頭のコミットメッセージから1行だけを切り出しています。
@@ -281,10 +289,9 @@ sedコマンドは、テキスト処理系のコマンドで、入力を行単�
 
 お次にこの値を出力します。
 なぜかというとこの後のPR作成の時も編集の時もタイトルとしてこの値を使うためです。
-`set-output`が必要になります、これは[ワークフローコマンド](https://docs.github.com/ja/actions/using-workflows/workflow-commands-for-github-actions)です。
+[ワークフローコマンド](https://docs.github.com/ja/actions/using-workflows/workflow-commands-for-github-actions)を使います。
 
-
-`set-output`することで出力した値を他のstepに渡すことができるようになります。
+`>> "$GITHUB_OUTPUT"`することで出力した値を他のstepに渡すことができるようになります。
 `name=XXXX`でoutputした値に名前をつけてあげます、今回はmessageという名前にしました。
 これを実際に取り出す際は下記のようになります。
 ```shell
@@ -295,9 +302,9 @@ echo ${{ steps.check_pr.outputs.message }} # ex. > feat: hoge
 そしたら最後にこちらです。
 
 ```shell
-echo "::set-output name=count::$(gh pr list -S '本番反映'in:title | wc -l)"
+echo "count=$(gh pr list -S '本番反映'in:title | wc -l)" >> "$GITHUB_OUTPUT"
 ```
-まずset-outputは先ほど記載した通りなので割愛します。
+まず`>> "$GITHUB_OUTPUT"`は先ほど記載した通りなので割愛します。
 nameにはcountを指定しています。
 ここからGitHub CLIのコマンドの出力結果を代入しています。
 
