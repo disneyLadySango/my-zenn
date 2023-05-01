@@ -4,6 +4,8 @@ emoji: "🦔"
 type: "tech"
 topics: [CDN, abテスト, Fastly]
 published: false
+publication_name: "spacemarket"
+
 ---
 
 こうなんか仰々しいタイトルをつけてみたものの、そんなに壮大な話でもありません。
