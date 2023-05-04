@@ -65,7 +65,7 @@ document.getElementById('sample')
 代表的なサービスで行くと、Googleオプティマイズを使ったABテストはこちらに該当します。
 :::message
 Googleオプティマイズは2023年9月30日でサービス終了するためCSRで実装する場合は、他のサービスを検討してください。
-ABTasty、Optimizely、VMOといったサービスがGA4連携を
+ABTasty、Optimizely、VMOといったサービスがGA4連携をサポートしているようなのでトラッキングも含めたサービスを検討されると良いと思います
 :::
 
 じゃあCSRでABテストすればいいじゃんという話なのですがそんなに良いことばかりでもありません。
