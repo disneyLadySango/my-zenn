@@ -3,7 +3,7 @@ title: "回避せよCWVスコア悪化、CDNとABテスト〜CWVスコアを維�
 emoji: "🦔"
 type: "tech"
 topics: [CDN, abテスト, Fastly]
-published: false
+published: true
 publication_name: "spacemarket"
 
 ---
