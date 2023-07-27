@@ -3,7 +3,7 @@ title: "[GAS]子課題単位でバーンダウンチャートが見れない、�
 emoji: "🌪"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["GAS", "JIRA"]
-published: false
+published: true
 ---
 進捗はいい（はず）のに、報告できない。
 
