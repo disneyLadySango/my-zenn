@@ -1,9 +1,9 @@
 ---
-title: "なぜ我々はタスクを小さくしなければいけないのか、そしてタスクはどのようにして小さくなっていったか"
+title: "なぜ我々はタスクを小さくしなければいけないのか、そしてタスクはどのようにして小さくしていったか"
 emoji: "🎫"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: ["タスク管理"]
-published: false
+published: true
 publication_name: "spacemarket"
 ---
 
