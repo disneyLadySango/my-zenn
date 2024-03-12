@@ -3,7 +3,7 @@ title: "最高にクールな輪読会が続いている理由を紹介するぜ
 emoji: "📕"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: ["読書", "輪読会"]
-published: false
+published: true
 publication_name: "spacemarket"
 ---
 
