@@ -3,7 +3,7 @@ title: "私たちのチームが生産性をあげた取り組みを発表しま
 emoji: "🐉"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: ["FourKeys", "生産性向上", "スクラム"]
-published: false
+published: true
 publication_name: "spacemarket"
 ---
 
