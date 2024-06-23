@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "zenn-cli": "^0.1.150"
+    "zenn-cli": "^0.1.154"
   },
   "scripts": {
     "article": "npx zenn new:article",
