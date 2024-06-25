@@ -3,7 +3,7 @@ title: "GASからいつも決まった時間に何かを動かしたい人へ"
 emoji: "⛽️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["GAS"]
-published: false
+published: true
 publication_name: "spacemarket"
 ---
 
