@@ -1,5 +1,5 @@
 ---
-title: "supabase × Auth0でLINEログインを実現し、RLSで安全にユーザーデータを扱う方法"
+title: "supabase × Auth0でLINEログインを実現し、RLSで安全にデータを扱う方法"
 emoji: "🔖"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["supabase", "auth0", "liff"]
