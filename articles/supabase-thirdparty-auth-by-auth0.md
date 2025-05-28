@@ -3,7 +3,7 @@ title: "supabase × Auth0でLINEログインを実現し、RLSで安全にデー
 emoji: "🔖"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["supabase", "auth0", "liff"]
-published: false
+published: true
 publication_name: "spacemarket"
 ---
 
